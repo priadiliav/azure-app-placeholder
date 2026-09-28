@@ -1,36 +1,55 @@
 .app {
-  max-width: 480px;
+  max-width: 640px;
   margin: 15vh auto 0;
   padding: 0 1.5rem;
   text-align: center;
   font-family: system-ui, sans-serif;
 }
 
-
-
-
 .subtitle {
   color: #666;
   margin-bottom: 2rem;
 }
 
-.check-button {
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.scenario-button {
+  font-size: 0.95rem;
+  padding: 0.65rem 1.1rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  background: #1a1a2e;
+  border: 1px solid transparent;
   color: #fff;
   cursor: pointer;
 }
 
-.check-button:disabled {
+.scenario-button.ok {
+  background: #15803d;
+}
+
+.scenario-button.client-error {
+  background: #b45309;
+}
+
+.scenario-button.server-error {
+  background: #b91c1c;
+}
+
+.scenario-button.slow {
+  background: #1d4ed8;
+}
+
+.scenario-button:disabled {
   opacity: 0.6;
   cursor: default;
 }
 
-.check-button:hover:not(:disabled) {
-  background: #16213e;
+.scenario-button:hover:not(:disabled) {
+  filter: brightness(0.9);
 }
 
 .result {
@@ -53,4 +72,15 @@
   font-size: 0.85rem;
   opacity: 0.75;
   margin-top: 0.25rem;
+}
+
+.body {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 0.8rem;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
